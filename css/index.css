@@ -33,6 +33,33 @@ header{
 .header ul li a:hover{
   color: #fff;
 }
+
+
+.header .mini-menu{
+  display: none;
+  width: 30px;
+  height: 20px;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  position: relative;
+}
+.header .mini-menu::after{
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.mini-title{
+  display: none;
+}
+
+
+
+
 img{
   width: 100%;
 }
@@ -40,9 +67,10 @@ img{
 .flexing{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .flexing .half{
-  flex: 1;
+  width: 50%;
 }
 
 .home{
@@ -116,6 +144,13 @@ img{
 }
 .big-dream .big-text p{
   text-align: justify;
+}
+.big-dream .img-me{
+  text-align: center !important;
+  order: 1;
+}
+.big-dream .big-text{
+  order: 2;
 }
 
 .services{
@@ -259,4 +294,103 @@ img{
   font-size: 16px;
   font-weight: 900;
   letter-spacing: 1px;
+}
+
+
+/* responsive area */
+@media screen and (max-width:991px) {
+
+  .header .menu{
+    display: none;
+    width: 0px;
+    background: #3600b4;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 15px;
+    transition: 500ms;
+  }
+  .header .menu .mini-title{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 20px; */
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  .header .menu li{
+    margin-bottom: 20px;
+  }
+  .header .mini-menu{
+    display: block;
+  }
+  .show{
+    display: block !important;
+    width: 300px !important;
+    transition: width 500ms;
+  }
+
+  .flexing .half{
+    width: 100% !important;
+  }
+  .home{
+    padding: 50px 0;
+  }
+  .home .about-me{
+    padding-right: 0px;
+  }
+  .home .img-me{
+    padding-left: 0px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .img-me img{
+    width: auto;
+    height: 300px;
+  }
+  .big-dream .big-text h1,
+  .home .about-me h1{
+    font-size: 30px;
+  }
+  .home .about-me h2{
+    font-size: 25px;
+  }
+  .home .about-me h3{
+    font-size: 20px;
+  }
+  .big-dream .big-text p,
+  .home .about-me p{
+    font-size: 14px;
+  }
+
+  .big-dream {
+    padding: 50px 0;
+  }
+  .big-dream .img-me{
+    text-align: center !important;
+    order: 2;
+    margin-top: 40px;
+  }
+  .big-dream .big-text{
+    order: 1;
+  }
+
+  .services .item{
+    width: 100%;
+  }
+  .section-title{
+    font-size: 35px;
+  }
+  .skills .box{
+    padding: 0 0;
+    margin-bottom: 20px;
+  }
+
+
+  .experiance .box{
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
