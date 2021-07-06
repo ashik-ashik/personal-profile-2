@@ -250,6 +250,8 @@ img{
   width: 12%;
 }
 
+
+/* experiance area start */
 .experiance{
   padding: 60px 0;
   background: url(../img/exp-bg.png) center left;
@@ -283,6 +285,11 @@ img{
 .experiance .half:nth-child(2) .box{
   margin-left: auto;
 }
+/* experiance area end */
+
+
+
+/* footer area */
 
 .footer{
   padding: 20px 0;
@@ -300,8 +307,10 @@ img{
 /* responsive area */
 @media screen and (max-width:991px) {
 
+
+  /* mobile menu responsive area */
+
   .header .menu{
-    display: none;
     width: 0px;
     background: #3600b4;
     height: 100vh;
@@ -310,6 +319,20 @@ img{
     left: 0;
     padding: 20px 15px;
     transition: 500ms;
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+    z-index: 100;
+  }
+  .header .menu::after{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000096;
+    z-index: -1;
   }
   .header .menu .mini-title{
     display: flex;
@@ -327,10 +350,14 @@ img{
     display: block;
   }
   .show{
-    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     width: 300px !important;
-    transition: width 500ms;
   }
+
+  /* mobile menu responsive area end */
+
+  /* others responsive area start */
 
   .flexing .half{
     width: 100% !important;
@@ -394,3 +421,5 @@ img{
     margin-bottom: 20px;
   }
 }
+
+/* all are responsive now ! */
